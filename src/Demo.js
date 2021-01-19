@@ -1,88 +1,78 @@
-import React from 'react';
-
-const Demo = () => {
+import React,{Component} from 'react';
+class Demo extends Component {
+    render(){
 return(
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home-page</title>
-</head>
-
-<body style="padding: 30px">
-  <div class="main-heading">
+  <>
+<div>
+  <div className="mainHeading">
     <h1>Exercise 1: understanding JSX</h1>
     <p>You need to convert this html code into JSX.</p>
   </div>
-  <div class="company-name">
+  <div className="companyName">
     <h2>MentorStudents Job-Portal</h2>
-    <img src="https://picsum.photos/id/180/500/200" class="company-banner">
+    <img src="https://picsum.photos/id/180/500/200" className="companyBanner"/>
   </div>
-  <div class="search-panel" style="margin-top: 20px;">
+  <div className="searchPanel" style={{marginTop: '20px'}}>
     <span>
-      <label for="search-what">What</label>
-      <input id="search-what" type="text" placeholder="Job title, keywords or company">
+      <label for="searchWhat">What</label>
+      <input id="searchWhat" type="text" placeholder="Job title, keywords or company"/>
     </span>
-    <span style="margin-left: 20px;">
-      <label for="search-where">Where</label>
-      <input id="search-where" type="text" placeholder="Enter city">
+    <span style={{marginLeft: '20px'}}>
+      <label for="searchWhere">Where</label>
+      <input id="searchWhere" type="text" placeholder="Enter city"/>
     </span>
-    <span style="margin-left: 20px;">
-      <button style="color: blue;">Find jobs</button>
+    <span style={{marginLeft: '20px'}}>
+      <button style={{color: 'blue'}}>Find jobs</button>
     </span>
   </div>
-  <div class="jobs" style="max-width: 20vw;">
-    <div>
+  <div className="jobs" style={{maxWidth: '20vw'}}>
       <h4>Full-stack developer</h4>
       <h5>Delhi</h5>
-      <img src="https://picsum.photos/id/180/200/100" class="job-post-image">
+      <img src="https://picsum.photos/id/180/200/100" className="jobPostImage"/>
       <p>
         Company looking for some crazy people, we are looking for challenge accepter who move with "I can do" attitude.
         Quick decision makers, living with the passion of work, never feeling or saying "I am tired"
       </p>
-      <div class="salary">Salary: 30K - 40K</div>
-      <button style="background-color: blue; color: white;">Apply</button>
-      <button style="background-color: red; color: white;">Not interested</button>
-      <hr>
+      <div className="salary">Salary: 30K - 40K</div>
+      <button style={{backgroundColor: 'blue' , color: 'white'}}>Apply</button>
+      <button style={{backgroundColor: 'red',  color: 'white'}}>Not interested</button>
+      </br>
     </div>
     <div>
       <h4>Front-end developer</h4>
       <h5>Pune</h5>
-      <img src="https://picsum.photos/id/180/200/100" class="job-post-image">
+      <img src="https://picsum.photos/id/180/200/100" className="jobPostImage"/>
       <p>
         Company looking for some crazy people, we are looking for challenge accepter who move with "I can do" attitude.
         Quick decision makers, living with the passion of work, never feeling or saying "I am tired"
       </p>
-      <div class="salary">Salary: 15K - 30K</div>
-      <button style="background-color: blue; color: white;">Apply</button>
-      <button style="background-color: red; color: white;">Not interested</button>
+      <div className="salary">Salary: 15K - 30K</div>
+      <button style={{backgroundColor: 'blue' , color: 'white'}}>Apply</button>
+      <button style={{backgroundColor: 'red', color: 'white'}}>Not interested</button>
       <hr>
-    </div>
+      </div>
+      <div>
     <div>
       <h4>Back-end developer</h4>
       <h5>Mumbai</h5>
-      <img src="https://picsum.photos/id/180/200/100" class="job-post-image">
+      <img src="https://picsum.photos/id/180/200/100" className="jobPostImage"/>
       <p>
         Company looking for some crazy people, we are looking for challenge accepter who move with "I can do" attitude.
         Quick decision makers, living with the passion of work, never feeling or saying "I am tired"
       </p>
-      <div class="salary">Salary: 20K - 30K</div>
-      <button style="background-color: blue; color: white;">Apply</button>
-      <button style="background-color: red; color: white;">Not interested</button>
+      <div className="salary">Salary: 20K - 30K</div>
+      <button style={{backgroundColor: 'blue', color: 'white'}}>Apply</button>
+      <button style={{backgroundColor: 'red', color: 'white'}}>Not interested</button>
       <hr>
     </div>
   </div>
-
-  <div class="pagination" style="margin-top: 20px;">
+  <div className="pagination" style={{marginTop: '20px'}}>
     <button> < Prev</button>
     <button>Next > </button>
   </div>
-</body>
-
-</html>
-
+  </div>
+  </>
 );
-};
+}
+}
  export default Demo;
