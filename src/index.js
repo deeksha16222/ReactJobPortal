@@ -1,14 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Demo from './Demo';
+import Card from './JobBrief';
+import Sdata from './Sdata';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+function ncard(val) {
+  console.log(val);
+return (
+<Card sname = {val.sname}
+slocation = {val.slocation}
+scity = {val.scity}
+scountry = {val.scountry}
+sdescription = {val.sdescription}
+ssalary = {val.ssalary}
+slogo = {val.slogo}
+/>
+);   
+};
 
 ReactDOM.render(
   <>
-    <Demo />
-    <App />
+    {Sdata.map(ncard)}
+    <App/>
   </>,
   document.getElementById('root')
 );
@@ -16,4 +30,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
