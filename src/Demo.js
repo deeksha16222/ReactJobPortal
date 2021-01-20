@@ -36,7 +36,7 @@ return(
       <div className="salary">Salary: 30K - 40K</div>
       <button style={{backgroundColor: 'blue' , color: 'white'}}>Apply</button>
       <button style={{backgroundColor: 'red',  color: 'white'}}>Not interested</button>
-      </br>
+      <hr/>
     </div>
     <div>
       <h4>Front-end developer</h4>
@@ -49,7 +49,7 @@ return(
       <div className="salary">Salary: 15K - 30K</div>
       <button style={{backgroundColor: 'blue' , color: 'white'}}>Apply</button>
       <button style={{backgroundColor: 'red', color: 'white'}}>Not interested</button>
-      <hr>
+      <hr/>
       </div>
       <div>
     <div>
@@ -63,12 +63,12 @@ return(
       <div className="salary">Salary: 20K - 30K</div>
       <button style={{backgroundColor: 'blue', color: 'white'}}>Apply</button>
       <button style={{backgroundColor: 'red', color: 'white'}}>Not interested</button>
-      <hr>
+      <hr/>
     </div>
   </div>
   <div className="pagination" style={{marginTop: '20px'}}>
-    <button> < Prev</button>
-    <button>Next > </button>
+    <button> &#10094; Prev </button>
+    <button>Next &#10095; </button>
   </div>
   </div>
   </>
