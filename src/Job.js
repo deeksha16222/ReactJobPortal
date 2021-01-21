@@ -1,4 +1,4 @@
-const Sdata = [
+const Job = [
   {
     sname: "Full-stack developer",
     scity: "Delhi",
@@ -45,4 +45,4 @@ const Sdata = [
   },
 ];
 
-export default Sdata;
+export default Job;

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from './JobBrief';
-import Sdata from './Sdata';
+import JobBrief from './JobBrief';
+import Job from './Job';
 import App from './App';
 
-function ncard(val) {
+function nJobBrief(val) {
   console.log(val);
 return (
-<Card sname = {val.sname}
+<JobBrief sname = {val.sname}
 slocation = {val.slocation}
 scity = {val.scity}
 scountry = {val.scountry}
@@ -21,7 +21,7 @@ slogo = {val.slogo}
 
 ReactDOM.render(
   <>
-    {Sdata.map(ncard)}
+    {Job.map(nJobBrief)}
     <App/>
   </>,
   document.getElementById('root')
