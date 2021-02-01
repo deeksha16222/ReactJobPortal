@@ -1,24 +1,43 @@
 import React from 'react';
 
 class SearchBar extends React.Component{
-    state = { term : ''};
-    onFormSubmit= event =>{
-        event.preventDefault();
-        this.props.onSubmit(this.state.term);
-    };
+    state = { description : '',
+    location : ''};
 
-    render(){
-        return (
-        <div>
-        <form onSubmit={this.onFormSubmit}>
-        <label> What </label>
-        <input type ="text" 
-        value ={this.state.term}
-        onChange={e => this.setState({term: e.target.value})}
-        />
-        </form>
-        </div>
-        );
-    }
-}
-export default SearchBar;
+
+    const handleInputChange = (event) => {
+    const { name, value } = event.target;
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log(state);
+  };
+
+  return (
+    <div className="search-section">
+      <Form className="search-form" onSubmit={handleSearch}>
+        <Row>
+          <Col>
+            <Form.Group controlId="description">
+              <Form.Control
+                type="text"
+                name="description"
+                value={state.description || ''}
+                placeholder="Enter search term"
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group controlId="location">
+              <Form.Control
+                type="text"
+                name="location"
+                value={state.location || ''}
+                placeholder="Enter location"
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+          </Col>
+          )

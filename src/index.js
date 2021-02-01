@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //import JobBrief from './JobBrief';
 //import Job from './Job';
-import App from './App';
-//import SpinnerComponent from './Spinner';
+//import App from './App';
+import SpinnerComponent from './SpinnerComponent';
 
-{/*function nJobBrief(val) {
+{/*function JobBriefList(val) {
   console.log(val);
 return (
 <JobBrief sname = {val.sname}
@@ -21,19 +21,10 @@ slogo = {val.slogo}
 };
 */}
 
-{/*ReactDOM.render(
-  <>
-    <h1><SpinnerComponent/></h1>
-    {Job.map(nJobBrief)}
-    <App/>
-  </>,
-  document.getElementById('root')
-);
-*/}
-
 ReactDOM.render(
   <>
-  <App/>
+    {/*{Job.map(JobBriefList)}*/}
+    <SpinnerComponent/>
   </>,
   document.getElementById('root')
 );
