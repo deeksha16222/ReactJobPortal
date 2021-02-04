@@ -1,13 +1,13 @@
+import React, { Component } from "react";
 import Jobs from "./jobs.json";
-import JobBriefList from "./JobBriefList";
-import SearchBarForName from './SearchBarForName';
-import SearchBarForLocation from './SearchBarForLocation';
-import { Component } from "react";
-
+import JobBriefList from "./components/JobBriefList";
+import SearchBarForName from './components/SearchBarForName';
+import SearchBarForLocation from './components/SearchBarForLocation';
+import Profile from './components/Profile';
 class App extends Component {
   state = {
     searchByJobName: "",
-    searchByJobLocation: ""
+    searchByJobLocation: "",
   }
 
   render() {
@@ -29,17 +29,39 @@ class App extends Component {
       return true;
     });
 
+    const showJobList = () => {
+      if(window.location.pathname === '/') {
+        return (
+          <div>
+            <div className="search-panel" style={{ marginTop: '20px', display: 'inline-block' }}>
+              <SearchBarForName onChange={this.handleSearchName} />
+              <SearchBarForLocation onChange={this.handleSearchLocation} />
+            </div>
+            <a 
+              className="btn btn-primary"
+              href="/profile"
+              target="_blank"
+              style={{display: 'inline-block', color:"white", marginLeft: '170px'}}>
+                See Your Profile
+            </a>
+            <JobBriefList jobs={jobsToShow} />
+          </div>
+        )
+      }
+    }
+
+    const showProfile = () => {
+      if(window.location.pathname === '/profile') return <Profile />;
+    }
+
     return (
       <div className="container">
-        <div className="search-panel" style={{ marginTop: '20px' }}>
-          <SearchBarForName onChange={this.handleSearchName} />
-          <SearchBarForLocation onChange={this.handleSearchLocation} />
-        </div>
-        <JobBriefList jobs={jobsToShow} />
+        {showJobList()}
+        {showProfile()}
       </div>
     );
   }
-
+  
   handleSearchName = searchByJobName => this.setState({
     searchByJobName: searchByJobName.toLowerCase()
   });

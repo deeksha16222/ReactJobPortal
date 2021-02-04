@@ -20,4 +20,3 @@ class JobBrief extends Component {
 }
 
 export default JobBrief;
-
