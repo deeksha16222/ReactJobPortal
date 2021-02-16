@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
 import Jobs from "./jobs.json";
 import JobBriefList from "./components/JobBriefList";
 import SearchBarForName from './components/SearchBarForName';
 import SearchBarForLocation from './components/SearchBarForLocation';
+import CompanyData from './components/CompanyData';
 import Profile from './components/Profile';
 class App extends Component {
   state = {
@@ -44,6 +46,13 @@ class App extends Component {
               style={{display: 'inline-block', color:"white", marginLeft: '170px'}}>
                 See Your Profile
             </a>
+            <a 
+              className="btn btn-primary"
+              href="/companies"
+              target="_blank"
+              style={{display: 'inline-block', color:"white", marginLeft: '170px'}}>
+                See companies' jobs
+            </a>
             <JobBriefList jobs={jobsToShow} />
           </div>
         )
@@ -54,10 +63,15 @@ class App extends Component {
       if(window.location.pathname === '/profile') return <Profile />;
     }
 
+    const showCompanies = () => {
+      if(window.location.pathname === '/companies') return <CompanyData/>;
+    }
+
     return (
       <div className="container">
         {showJobList()}
         {showProfile()}
+        {showCompanies()}
       </div>
     );
   }
@@ -72,4 +86,8 @@ class App extends Component {
 
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { jobs: state.job.jobsData}
+}
+
+export default connect(mapStateToProps)(App);
