@@ -1,18 +1,22 @@
-import { useState, useEffect, useRef } from "react";
+import React, { Component } from 'react';
 
-function SearchBarForName (props) {
-	const [jobName, setJobName] = useState('');
-	const jobNameInput = useRef(null);
-
-	const handleChange = (e) => {
-		setJobName(e.target.value)
+class SearchBarForName extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			jobName: ''
+		}
 	}
 
-	useEffect(() => {
-		jobNameInput.current.focus();
-		props.onChange(jobName)
-	  }, [jobName]); // eslint-disable-line react-hooks/exhaustive-deps
-	
+	componentDidMount() {
+		this.JobInput.focus();
+	}
+
+	handleChange = event => {
+		this.setState({ jobName: event.target.value }, () => this.props.onChange(this.state.jobName));
+	}
+
+	render() {
 		return (
 			<span style={{ display: 'inline-block' }}>
 				<label htmlFor="search-what">What</label>
@@ -21,12 +25,13 @@ function SearchBarForName (props) {
 					type="text"
 					placeholder="Job title, keywords or company"
 					style={{ marginLeft: '10px' }}
-					ref={jobNameInput}
-					value={jobName}
-					onChange={handleChange}
+					ref={input => { this.JobInput = input; }}
+					value={this.state.jobName}
+					onChange={this.handleChange}
 				/>
 			</span>
 		)
+	}
 }
 
 export default SearchBarForName;

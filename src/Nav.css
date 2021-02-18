@@ -1,0 +1,35 @@
+.navbar{
+    position: sticky;
+    height:60px;
+    width: 100vw;
+    background-color: white;
+    top: 0px;
+    z-index: 100;
+    border-radius: 10px;
+    /* margin: 0px 20px; */
+    display: flex;
+    justify-content: space-around;
+}
+.link{
+    font-size: larger;
+    font-weight: 500;
+    color: black;
+}
+.link:hover{
+    transform: scale(1.1);
+    transition:transform 0.5s;
+    text-decoration: none;
+}
+.user{
+    display: flex;
+    justify-content: center;
+}
+.user > img{
+    height: 40px;
+    border-radius: 50%;
+    margin:auto 5px;
+}
+.user > p{
+    margin: 10px 5px;
+    font-size: larger;
+}
