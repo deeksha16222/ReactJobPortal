@@ -8,9 +8,9 @@ const Nav = (props) => {
 
   return (
     <div className="navbar">
-        <Link className="link" to="/">Home</Link>
-        <Link className="link" to="/profile">See Your Profile</Link>
-        <Link className="link" to="/companies">See Companies Jobs</Link>
+        <Link className="link" to="/find-jobs">Find jobs</Link>
+        <Link className="link" to="/profile">See Profile</Link>
+        <Link className="link" to="/companies">See Companies </Link>
         <div className="user">
         <p>Hey, <b>{props.name ? props.name : "User"}</b></p>
         <img src={props.image ? props.image : "https://www.seekpng.com/png/detail/115-1150053_avatar-png-transparent-png-royalty-free-default-user.png"} alt=""/>

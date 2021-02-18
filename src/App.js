@@ -30,7 +30,7 @@ class App extends Component {
     });
 
     const showJobList = () => {
-      if(window.location.pathname === '/') {
+      if(window.location.pathname === '/find-jobs') {
         return (
           <div>
             <div className="search-panel" style={{ marginTop: '20px', display: 'inline-block' }}>

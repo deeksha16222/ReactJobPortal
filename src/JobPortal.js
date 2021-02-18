@@ -10,7 +10,7 @@ const JobPortal = () => {
     <>
       <BrowserRouter>
         <Nav/>
-        <Route path="/" exact component={App}/>
+        <Route path="/find-jobs" exact component={App}/>
         <Route path="/profile"  component={Profile}/>
         <Route path="/companies" component={CompanyData}/>
       </BrowserRouter>
